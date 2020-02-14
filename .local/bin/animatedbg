@@ -1,0 +1,22 @@
+#!/bin/bash
+
+MONITORS=`xrandr | grep " connected " | awk '{print$3 }'`
+#echo $MONITORS
+RESOLUTIONS=()
+killall xwinwrap
+killall xwinwrap
+
+for cfg in $MONITORS; do
+	if [ "$cfg" = "primary" ]; then
+		#echo `xrandr | grep " connected primary " | awk '{print$4 }'`
+		RESOLUTIONS+=( `xrandr | grep " connected primary " | awk '{print$4 }'` )
+	else
+		#echo $cfg
+		RESOLUTIONS+=( $cfg )
+	fi
+done
+
+for val in ${RESOLUTIONS[*]}; do
+	echo $val
+	xwinwrap -ov -g $val -- mpv -vo=gpu -wid WID ~/Pictures/Bridge.mp4 --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings --scale=oversample --dither-depth=8 --speed=0.3 &
+done & 

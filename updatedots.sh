@@ -1,0 +1,27 @@
+cp ~/.config/picom.conf .config/picom.conf
+cp /etc/environment ./etc/environment
+cp /etc/fonts/fonts.conf ./etc/fonts/fonts.conf
+cp /etc/fonts/fonts.conf ./etc/fonts/fonts.conf
+cp ~/.local/bin/animatedbg .local/bin/animatedbg
+cp ~/.local/bin/check-network .local/bin/check-network
+cp ~/.local/bin/hidpi .local/bin/hidpi
+cp ~/.local/bin/lodpi .local/bin/lodpi
+cp ~/.local/bin/pavolume .local/bin/pavolume
+cp ~/.local/bin/launch.sh .local/bin/launch.sh
+cp ~/.gtkrc-2.0 ./gtkrc-2.0
+cp ~/.bashrc ./bashrc
+cp ~/.zshrc ./zshrc
+cp ~/.gtkrc-2.0 ./.gtkrc-2.0
+cp ~/.bashrc ./.bashrc
+cp ~/.zshrc ./.zshrc
+cp ~/.oh-my-zsh/themes/damino.zsh-theme ./.oh-my-zsh/themes/damino.zsh-theme
+cp -r ~/.local/share/rofi ./.local/share/rofi
+cp ~/.config/alacritty/alacritty.yml .config/alacritty/alacritty.yml
+cp ~/.config/dunst/dunstrc .config/dunst/dunstrc
+cp ~/.config/fontconfig/fonts.conf .config/fontconfig/fonts.conf
+cp ~/.config/gtk-3.0/settings.ini .config/gtk-3.0/settings.ini
+cp ~/.config/i3/config .config/i3/config
+cp ~/.config/polybar/config .config/polybar/config
+cp ~/.config/rofi/config .config/rofi/config
+cp /etc/X11/nvidia-xorg.conf etc/X11/nvidia-xorg.conf
+cp /etc/X11/nvidia-xorg.conf.d/30-nvidia.conf etc/X11/nvidia-xorg.conf.d/30-nvidia-conf

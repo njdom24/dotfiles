@@ -1,0 +1,30 @@
+#!/bin/bash
+killall compton
+sed -i 's/Xft.dpi: 96/Xft.dpi: 192/g' /home/damino/.Xresources
+sed -i 's/Xcursor.size: 24/Xcursor.size: 48/g' /home/damino/.Xresources
+sed -i 's/gtk-cursor-theme-size=24/gtk-cursor-theme-size=48/g' /home/damino/.config/gtk-3.0/settings.ini
+xrandr --dpi 192
+xrdb /home/damino/.Xresources
+sed -i 's/dpi-x = 96/dpi-x = 192/g' /home/damino/.config/polybar/config
+sed -i 's/dpi-y = 96/dpi-y = 192/g' /home/damino/.config/polybar/config
+sed -i 's/tray-maxsize = 20%/tray-maxsize = 40%/g' /home/damino/.config/polybar/config
+sed -i 's/x: 0/x: 0/g' /home/damino/.config/alacritty/alacritty.yml
+sed -i 's/y: 0/y: 1/g' /home/damino/.config/alacritty/alacritty.yml
+sed -i 's/300x5-30+20/600x5-30+20/g' /home/damino/.config/dunst/dunstrc
+
+sed -i 's/GDK_SCALE=1/GDK_SCALE=2/g' /home/damino/.bashrc
+sed -i 's/GDK_SCALE=1/GDK_SCALE=2/g' /home/damino/.zshrc
+sed -i 's/GDK_DPI_SCALE=1/GDK_DPI_SCALE=0.5/g' /home/damino/.bashrc
+sed -i 's/GDK_DPI_SCALE=1/GDK_DPI_SCALE=0.5/g' /home/damino/.zshrc
+systemctl --user restart dunst
+
+#xrandr --output eDP-1 --auto
+#xrandr --output eDP-1-1 --auto
+
+killall polkit-gnome-authentication-agent-1 && \
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+killall blueman-tray && blueman-tray &
+killall nm-applet && nm-applet &
+
+i3 restart
+picom &

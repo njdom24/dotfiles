@@ -1,0 +1,9 @@
+Section "Screen"
+  Identifier "nvidia"
+  Device     "nvidia"
+#  Option "AllowEmptyInitialConfiguration" "Yes"
+#  Option "UseDisplayDevice" "none"
+  Option     "AllowIndirectGLXProtocol" "off"
+  Option     "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+  Option     "TripleBuffer" "on"
+EndSection
